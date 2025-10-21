@@ -3,1310 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hindu Festivals &amp; Panchang Guide | For Young People</title>
-    <style>
-        :root {
-  /* Primitive Color Tokens */
-  --color-white: rgba(255, 255, 255, 1);
-  --color-black: rgba(0, 0, 0, 1);
-  --color-cream-50: rgba(252, 252, 249, 1);
-  --color-cream-100: rgba(255, 255, 253, 1);
-  --color-gray-200: rgba(245, 245, 245, 1);
-  --color-gray-300: rgba(167, 169, 169, 1);
-  --color-gray-400: rgba(119, 124, 124, 1);
-  --color-slate-500: rgba(98, 108, 113, 1);
-  --color-brown-600: rgba(94, 82, 64, 1);
-  --color-charcoal-700: rgba(31, 33, 33, 1);
-  --color-charcoal-800: rgba(38, 40, 40, 1);
-  --color-slate-900: rgba(19, 52, 59, 1);
-  --color-teal-300: rgba(50, 184, 198, 1);
-  --color-teal-400: rgba(45, 166, 178, 1);
-  --color-teal-500: rgba(33, 128, 141, 1);
-  --color-teal-600: rgba(29, 116, 128, 1);
-  --color-teal-700: rgba(26, 104, 115, 1);
-  --color-teal-800: rgba(41, 150, 161, 1);
-  --color-red-400: rgba(255, 84, 89, 1);
-  --color-red-500: rgba(192, 21, 47, 1);
-  --color-orange-400: rgba(230, 129, 97, 1);
-  --color-orange-500: rgba(168, 75, 47, 1);
-
-  /* RGB versions for opacity control */
-  --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
-  --color-slate-500-rgb: 98, 108, 113;
-  --color-red-500-rgb: 192, 21, 47;
-  --color-red-400-rgb: 255, 84, 89;
-  --color-orange-500-rgb: 168, 75, 47;
-  --color-orange-400-rgb: 230, 129, 97;
-
-  /* Background color tokens (Light Mode) */
-  --color-bg-1: rgba(59, 130, 246, 0.08); /* Light blue */
-  --color-bg-2: rgba(245, 158, 11, 0.08); /* Light yellow */
-  --color-bg-3: rgba(34, 197, 94, 0.08); /* Light green */
-  --color-bg-4: rgba(239, 68, 68, 0.08); /* Light red */
-  --color-bg-5: rgba(147, 51, 234, 0.08); /* Light purple */
-  --color-bg-6: rgba(249, 115, 22, 0.08); /* Light orange */
-  --color-bg-7: rgba(236, 72, 153, 0.08); /* Light pink */
-  --color-bg-8: rgba(6, 182, 212, 0.08); /* Light cyan */
-
-  /* Semantic Color Tokens (Light Mode) */
-  --color-background: var(--color-cream-50);
-  --color-surface: var(--color-cream-100);
-  --color-text: var(--color-slate-900);
-  --color-text-secondary: var(--color-slate-500);
-  --color-primary: var(--color-teal-500);
-  --color-primary-hover: var(--color-teal-600);
-  --color-primary-active: var(--color-teal-700);
-  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
-  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
-  --color-btn-primary-text: var(--color-cream-50);
-  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
-  --color-error: var(--color-red-500);
-  --color-success: var(--color-teal-500);
-  --color-warning: var(--color-orange-500);
-  --color-info: var(--color-slate-500);
-  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
-  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
-
-  /* Common style patterns */
-  --focus-ring: 0 0 0 3px var(--color-focus-ring);
-  --focus-outline: 2px solid var(--color-primary);
-  --status-bg-opacity: 0.15;
-  --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-  /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
-  --color-error-rgb: 192, 21, 47;
-  --color-warning-rgb: 168, 75, 47;
-  --color-info-rgb: 98, 108, 113;
-
-  /* Typography */
-  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, monospace;
-  --font-size-xs: 11px;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 14px;
-  --font-size-lg: 16px;
-  --font-size-xl: 18px;
-  --font-size-2xl: 20px;
-  --font-size-3xl: 24px;
-  --font-size-4xl: 30px;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 550;
-  --font-weight-bold: 600;
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --letter-spacing-tight: -0.01em;
-
-  /* Spacing */
-  --space-0: 0;
-  --space-1: 1px;
-  --space-2: 2px;
-  --space-4: 4px;
-  --space-6: 6px;
-  --space-8: 8px;
-  --space-10: 10px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-20: 20px;
-  --space-24: 24px;
-  --space-32: 32px;
-
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-base: 8px;
-  --radius-md: 10px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
-    0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
-    0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
-
-  /* Animation */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* Layout */
-  --container-sm: 640px;
-  --container-md: 768px;
-  --container-lg: 1024px;
-  --container-xl: 1280px;
-
-  /* Custom colors for the app */
-  --color-saffron: #FF9933;
-  --color-orange: #FF6600;
-  --color-yellow: #FFCC00;
-  --color-green: #138808;
-  --color-purple: #9F4F96;
-  --color-pink: #FF69B4;
-}
-
-/* Dark mode colors */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* RGB versions for opacity control (Dark Mode) */
-    --color-gray-400-rgb: 119, 124, 124;
-    --color-teal-300-rgb: 50, 184, 198;
-    --color-gray-300-rgb: 167, 169, 169;
-    --color-gray-200-rgb: 245, 245, 245;
-
-    /* Background color tokens (Dark Mode) */
-    --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
-    --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
-    --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-    --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
-    --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
-    --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
-    --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
-    --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
-
-    /* Semantic Color Tokens (Dark Mode) */
-    --color-background: var(--color-charcoal-700);
-    --color-surface: var(--color-charcoal-800);
-    --color-text: var(--color-gray-200);
-    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-    --color-primary: var(--color-teal-300);
-    --color-primary-hover: var(--color-teal-400);
-    --color-primary-active: var(--color-teal-800);
-    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
-    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
-    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
-    --color-error: var(--color-red-400);
-    --color-success: var(--color-teal-300);
-    --color-warning: var(--color-orange-400);
-    --color-info: var(--color-gray-300);
-    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
-    --color-btn-primary-text: var(--color-slate-900);
-    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
-    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    --button-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
-    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
-
-    /* Common style patterns - updated for dark mode */
-    --focus-ring: 0 0 0 3px var(--color-focus-ring);
-    --focus-outline: 2px solid var(--color-primary);
-    --status-bg-opacity: 0.15;
-    --status-border-opacity: 0.25;
-    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-    /* RGB versions for dark mode */
-    --color-success-rgb: var(--color-teal-300-rgb);
-    --color-error-rgb: var(--color-red-400-rgb);
-    --color-warning-rgb: var(--color-orange-400-rgb);
-    --color-info-rgb: var(--color-gray-300-rgb);
-  }
-}
-
-/* Base styles */
-html {
-  font-size: var(--font-size-base);
-  font-family: var(--font-family-base);
-  line-height: var(--line-height-normal);
-  color: var(--color-text);
-  background-color: var(--color-background);
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text);
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-h1 {
-  font-size: var(--font-size-4xl);
-}
-h2 {
-  font-size: var(--font-size-3xl);
-}
-h3 {
-  font-size: var(--font-size-2xl);
-}
-h4 {
-  font-size: var(--font-size-xl);
-}
-h5 {
-  font-size: var(--font-size-lg);
-}
-h6 {
-  font-size: var(--font-size-md);
-}
-
-p {
-  margin: 0 0 var(--space-16) 0;
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-standard);
-}
-
-a:hover {
-  color: var(--color-primary-hover);
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-8) var(--space-16);
-  border-radius: var(--radius-base);
-  font-size: var(--font-size-base);
-  font-weight: 500;
-  line-height: 1.5;
-  cursor: pointer;
-  transition: all var(--duration-normal) var(--ease-standard);
-  border: none;
-  text-decoration: none;
-  position: relative;
-}
-
-.btn:focus-visible {
-  outline: none;
-  box-shadow: var(--focus-ring);
-}
-
-.btn--primary {
-  background: var(--color-primary);
-  color: var(--color-btn-primary-text);
-}
-
-.btn--primary:hover {
-  background: var(--color-primary-hover);
-}
-
-.btn--primary:active {
-  background: var(--color-primary-active);
-}
-
-.btn--secondary {
-  background: var(--color-secondary);
-  color: var(--color-text);
-}
-
-.btn--secondary:hover {
-  background: var(--color-secondary-hover);
-}
-
-.btn--secondary:active {
-  background: var(--color-secondary-active);
-}
-
-/* Form elements */
-.form-control {
-  display: block;
-  width: 100%;
-  padding: var(--space-8) var(--space-12);
-  font-size: var(--font-size-md);
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-base);
-  transition: border-color var(--duration-fast) var(--ease-standard),
-    box-shadow var(--duration-fast) var(--ease-standard);
-}
-
-.form-control:focus {
-  border-color: var(--color-primary);
-  outline: var(--focus-outline);
-}
-
-/* Card component */
-.card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-card-border);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: all var(--duration-normal) var(--ease-standard);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.card__body {
-  padding: var(--space-16);
-}
-
-/* Container layout */
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--space-16);
-  padding-left: var(--space-16);
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: var(--container-sm);
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: var(--container-md);
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    max-width: var(--container-lg);
-  }
-}
-@media (min-width: 1280px) {
-  .container {
-    max-width: var(--container-xl);
-  }
-}
-
-/* Custom App Styles */
-
-/* Header */
-.header {
-  background: linear-gradient(135deg, var(--color-saffron), var(--color-orange));
-  color: white;
-  padding: var(--space-16) 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--shadow-lg);
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-}
-
-/* Navigation */
-.nav {
-  display: flex;
-  gap: var(--space-16);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav a {
-  color: white;
-  font-weight: var(--font-weight-medium);
-  padding: var(--space-8) var(--space-16);
-  border-radius: var(--radius-base);
-  transition: background-color var(--duration-fast);
-}
-
-.nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, var(--color-bg-2), var(--color-bg-6));
-  padding: var(--space-32) 0;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: var(--space-16);
-  background: linear-gradient(135deg, var(--color-saffron), var(--color-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-24);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Section */
-.section {
-  padding: var(--space-32) 0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: var(--space-32);
-  font-size: var(--font-size-3xl);
-  color: var(--color-primary);
-}
-
-/* Grid layouts */
-.grid {
-  display: grid;
-  gap: var(--space-24);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Tithi cards */
-.tithi-card {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-20);
-  border: 2px solid transparent;
-  transition: all var(--duration-normal);
-  cursor: pointer;
-}
-
-.tithi-card:hover {
-  border-color: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.tithi-card.prathama { background: var(--color-bg-1); }
-.tithi-card.dvitiya { background: var(--color-bg-2); }
-.tithi-card.tritiya { background: var(--color-bg-3); }
-.tithi-card.chaturthi { background: var(--color-bg-4); }
-.tithi-card.panchami { background: var(--color-bg-5); }
-.tithi-card.shashthi { background: var(--color-bg-6); }
-.tithi-card.saptami { background: var(--color-bg-7); }
-.tithi-card.ashtami { background: var(--color-bg-8); }
-.tithi-card.navami { background: var(--color-bg-1); }
-.tithi-card.dashami { background: var(--color-bg-2); }
-.tithi-card.ekadashi { background: var(--color-bg-3); }
-.tithi-card.dvadashi { background: var(--color-bg-4); }
-.tithi-card.trayodashi { background: var(--color-bg-5); }
-.tithi-card.chaturdashi { background: var(--color-bg-6); }
-.tithi-card.purnima { background: var(--color-bg-7); }
-.tithi-card.amavasya { background: var(--color-bg-8); }
-
-.tithi-number {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-  margin-bottom: var(--space-8);
-}
-
-.tithi-name {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-8);
-}
-
-.tithi-festivals {
-  margin-top: var(--space-12);
-}
-
-.festival-tag {
-  display: inline-block;
-  background: var(--color-primary);
-  color: white;
-  padding: var(--space-4) var(--space-8);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  margin: var(--space-2);
-}
-
-/* Festival details modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  padding: var(--space-20);
-}
-
-.modal.show {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-24);
-  max-width: 600px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: var(--space-16);
-  right: var(--space-16);
-  background: none;
-  border: none;
-  font-size: var(--font-size-2xl);
-  cursor: pointer;
-  color: var(--color-text-secondary);
-}
-
-/* Search */
-.search-container {
-  margin-bottom: var(--space-24);
-  text-align: center;
-}
-
-.search-input {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* Calendar */
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--space-16);
-}
-
-.calendar-month {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-20);
-  border: 1px solid var(--color-card-border);
-}
-
-.month-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-16);
-  color: var(--color-primary);
-  text-align: center;
-}
-
-.festival-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-8);
-  margin-bottom: var(--space-8);
-  background: var(--color-bg-1);
-  border-radius: var(--radius-base);
-  cursor: pointer;
-  transition: all var(--duration-fast);
-}
-
-.festival-item:hover {
-  background: var(--color-bg-2);
-  transform: translateX(4px);
-}
-
-.festival-date {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  font-size: var(--font-size-sm);
-}
-
-.festival-name {
-  font-weight: var(--font-weight-medium);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal {
-    padding: var(--space-12);
-  }
-}
-
-/* Utility classes */
-.text-center { text-align: center; }
-.mb-16 { margin-bottom: var(--space-16); }
-.mb-24 { margin-bottom: var(--space-24); }
-.hidden { display: none; }
-.emoji { font-size: 1.2em; }
-
-/* Moon phases */
-.moon-phase {
-  font-size: 2rem;
-  margin-bottom: var(--space-8);
-}
-
-@font-face {
-  font-family: 'FKGroteskNeue';
-  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
-    format('woff2');
-}
-    </style>
+    <title>TithiToday - Hindu Calendar for Youth 🪔</title>
+    <meta name="description" content="Modern Hindu Panchang with all festivals, tithis, and muhurtas. Auto-updating calendar for 2025.">
+    <meta name="keywords" content="Hindu calendar, Panchang, Tithi, Indian festivals, Diwali, Holi, Ekadashi">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="TithiToday - Hindu Calendar for Youth">
+    <meta property="og:description" content="Never miss a festival again! Auto-updating Panchang.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪔</text></svg>">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <div class="logo">
-                <span class="emoji">🪔</span>
-                Hindu Festivals Guide
+            <div class="nav-brand">🪔 TithiToday</div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#festivals" class="nav-link">All Festivals</a>
+                <a href="#learn" class="nav-link">Learn</a>
+                <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
             </div>
-            <nav class="nav">
-                <a href="#home">Home</a>
-                <a href="#tithi">What is Tithi?</a>
-                <a href="#muhurta">What is Muhurta?</a>
-                <a href="#festivals">Festivals by Tithi</a>
-                <a href="#calendar">2025 Calendar</a>
-            </nav>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Today's Panchang -->
     <section id="home" class="hero">
         <div class="container">
-            <h1><span class="emoji">🎊</span> Discover Hindu Festivals &amp; Traditions <span class="emoji">🎊</span></h1>
-            <p>Learn about Hindu Panchang, Tithis, Muhurtas, and festivals in a fun and easy way! Perfect for young people wanting to connect with their cultural roots.</p>
-            <a href="#tithi" class="btn btn--primary">Start Learning <span class="emoji">📚</span></a>
-        </div>
-    </section>
+            <div class="hero-content">
+                <h1 class="hero-title">🪔 Today's Panchang</h1>
+                <p class="hero-subtitle" id="currentDate">Loading...</p>
 
-    <!-- What is Panchang -->
-    <section id="panchang" class="section">
-        <div class="container">
-            <h2 class="section-title">What is Panchang? <span class="emoji">📅</span></h2>
-            <div class="grid grid-2">
-                <div class="card">
-                    <div class="card__body">
-                        <h3>Simple Explanation</h3>
-                        <p>Panchang (meaning 'five limbs') is the Hindu calendar system that tracks lunar days, constellations, and auspicious timings. It's like a cosmic GPS for planning important life events!</p>
+                <div id="todayFestival" class="festival-card">
+                    <div class="festival-header">
+                        <h2 id="festivalName">Loading...</h2>
+                        <span id="tithiBadge" class="badge">Tithi</span>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card__body">
-                        <h3>The Five Elements</h3>
-                        <ul>
-                            <li><strong>Tithi</strong> - Lunar day (like Monday, Tuesday but based on moon)</li>
-                            <li><strong>Vara</strong> - Weekday (Sunday to Saturday)</li>
-                            <li><strong>Nakshatra</strong> - Constellation/Star position</li>
-                            <li><strong>Yoga</strong> - Auspicious period</li>
-                            <li><strong>Karana</strong> - Half of a tithi</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What is Tithi -->
-    <section id="tithi" class="section">
-        <div class="container">
-            <h2 class="section-title">What is Tithi? <span class="emoji">🌙</span></h2>
-            <div class="grid grid-2 mb-24">
-                <div class="card">
-                    <div class="card__body">
-                        <h3>Simple Definition</h3>
-                        <p>A Tithi is a lunar day in the Hindu calendar. Unlike our regular calendar that follows the sun, Hindu festivals follow the moon's cycle!</p>
-                        <p><strong>Each tithi = Moon moving 12 degrees away from the sun</strong></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__body">
-                        <h3>Two Phases</h3>
-                        <p><span class="emoji">🌒</span> <strong>Shukla Paksha</strong> - Waxing moon (15 days)<br>Moon getting brighter</p>
-                        <p><span class="emoji">🌘</span> <strong>Krishna Paksha</strong> - Waning moon (15 days)<br>Moon getting darker</p>
-                    </div>
-                </div>
-            </div>
-            
-            <h3 class="text-center mb-16">All 15 Tithis <span class="emoji">📋</span></h3>
-            <div class="grid grid-4">
-                <div class="tithi-card prathama">
-                    <div class="tithi-number">1</div>
-                    <div class="tithi-name">Prathama/Padyami</div>
-                    <div class="moon-phase">🌑</div>
-                    <p>First lunar day, ruled by Agni (Fire)</p>
-                </div>
-                <div class="tithi-card dvitiya">
-                    <div class="tithi-number">2</div>
-                    <div class="tithi-name">Dvitiya</div>
-                    <div class="moon-phase">🌒</div>
-                    <p>Second lunar day</p>
-                </div>
-                <div class="tithi-card tritiya">
-                    <div class="tithi-number">3</div>
-                    <div class="tithi-name">Tritiya</div>
-                    <div class="moon-phase">🌒</div>
-                    <p>Third lunar day</p>
-                </div>
-                <div class="tithi-card chaturthi">
-                    <div class="tithi-number">4</div>
-                    <div class="tithi-name">Chaturthi</div>
-                    <div class="moon-phase">🌓</div>
-                    <p>Fourth lunar day</p>
-                </div>
-                <div class="tithi-card panchami">
-                    <div class="tithi-number">5</div>
-                    <div class="tithi-name">Panchami</div>
-                    <div class="moon-phase">🌓</div>
-                    <p>Fifth lunar day</p>
-                </div>
-                <div class="tithi-card shashthi">
-                    <div class="tithi-number">6</div>
-                    <div class="tithi-name">Shashthi</div>
-                    <div class="moon-phase">🌔</div>
-                    <p>Sixth lunar day</p>
-                </div>
-                <div class="tithi-card saptami">
-                    <div class="tithi-number">7</div>
-                    <div class="tithi-name">Saptami</div>
-                    <div class="moon-phase">🌔</div>
-                    <p>Seventh lunar day</p>
-                </div>
-                <div class="tithi-card ashtami">
-                    <div class="tithi-number">8</div>
-                    <div class="tithi-name">Ashtami</div>
-                    <div class="moon-phase">🌕</div>
-                    <p>Eighth lunar day</p>
-                </div>
-                <div class="tithi-card navami">
-                    <div class="tithi-number">9</div>
-                    <div class="tithi-name">Navami</div>
-                    <div class="moon-phase">🌕</div>
-                    <p>Ninth lunar day</p>
-                </div>
-                <div class="tithi-card dashami">
-                    <div class="tithi-number">10</div>
-                    <div class="tithi-name">Dashami</div>
-                    <div class="moon-phase">🌖</div>
-                    <p>Tenth lunar day</p>
-                </div>
-                <div class="tithi-card ekadashi">
-                    <div class="tithi-number">11</div>
-                    <div class="tithi-name">Ekadashi</div>
-                    <div class="moon-phase">🌖</div>
-                    <p>Most important for fasting!</p>
-                </div>
-                <div class="tithi-card dvadashi">
-                    <div class="tithi-number">12</div>
-                    <div class="tithi-name">Dvadashi</div>
-                    <div class="moon-phase">🌗</div>
-                    <p>Breaking Ekadashi fast</p>
-                </div>
-                <div class="tithi-card trayodashi">
-                    <div class="tithi-number">13</div>
-                    <div class="tithi-name">Trayodashi</div>
-                    <div class="moon-phase">🌗</div>
-                    <p>Thirteenth lunar day</p>
-                </div>
-                <div class="tithi-card chaturdashi">
-                    <div class="tithi-number">14</div>
-                    <div class="tithi-name">Chaturdashi</div>
-                    <div class="moon-phase">🌘</div>
-                    <p>Fourteenth lunar day</p>
-                </div>
-                <div class="tithi-card purnima">
-                    <div class="tithi-number">15</div>
-                    <div class="tithi-name">Purnima</div>
-                    <div class="moon-phase">🌕</div>
-                    <p>Full Moon - End of Shukla Paksha</p>
-                </div>
-                <div class="tithi-card amavasya">
-                    <div class="tithi-number">15</div>
-                    <div class="tithi-name">Amavasya</div>
-                    <div class="moon-phase">🌑</div>
-                    <p>New Moon - End of Krishna Paksha</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What is Muhurta -->
-    <section id="muhurta" class="section">
-        <div class="container">
-            <h2 class="section-title">What is Muhurta? <span class="emoji">⏰</span></h2>
-            <div class="grid grid-2">
-                <div class="card">
-                    <div class="card__body">
-                        <h3>Simple Definition</h3>
-                        <p>Muhurta is an auspicious time period of approximately 48 minutes. Think of it as finding the perfect time for important life events!</p>
-                        <p><strong>Why 48 minutes?</strong> It's based on ancient astronomical calculations that determine when planetary positions are most favorable.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card__body">
-                        <h3>When Do We Use Muhurta? <span class="emoji">🤔</span></h3>
-                        <ul>
-                            <li><span class="emoji">💒</span> Weddings &amp; engagements</li>
-                            <li><span class="emoji">🏢</span> Starting new business</li>
-                            <li><span class="emoji">🏠</span> Housewarming (Griha Pravesh)</li>
-                            <li><span class="emoji">🚗</span> Buying vehicle or property</li>
-                            <li><span class="emoji">📚</span> Starting education/exams</li>
-                            <li><span class="emoji">💼</span> Job interviews</li>
-                            <li><span class="emoji">✈️</span> Important travels</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Festivals by Tithi -->
-    <section id="festivals" class="section">
-        <div class="container">
-            <h2 class="section-title">Festivals by Tithi <span class="emoji">🎉</span></h2>
-            
-            <div class="search-container">
-                <input type="text" id="festivalSearch" class="form-control search-input" placeholder="Search festivals or tithis... 🔍">
-            </div>
-            
-            <div id="festivalsGrid" class="grid grid-3">
-                <!-- Festival cards will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- 2025 Calendar -->
-    <section id="calendar" class="section">
-        <div class="container">
-            <h2 class="section-title">2025 Festival Calendar <span class="emoji">📅</span></h2>
-            <div class="calendar-grid" id="calendarGrid">
-                <!-- Calendar will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Festival Details Modal -->
-    <div id="festivalModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div id="modalBody">
-                <!-- Modal content will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Festival and Tithi data
-        const tithiData = [
-            {
-                name: "Prathama/Padyami",
-                number: 1,
-                description: "First lunar day, ruled by Agni (Fire)",
-                festivals: ["Gudi Padwa", "Ugadi", "Navratri begins"],
-                significance: "New beginnings, ruled by Agni"
-            },
-            {
-                name: "Dvitiya",
-                number: 2,
-                description: "Second lunar day",
-                festivals: ["Bhai Dooj"],
-                significance: "Celebrating sibling bond"
-            },
-            {
-                name: "Tritiya",
-                number: 3,
-                description: "Third lunar day",
-                festivals: ["Akshaya Tritiya"],
-                significance: "Most auspicious for new beginnings"
-            },
-            {
-                name: "Chaturthi",
-                number: 4,
-                description: "Fourth lunar day",
-                festivals: ["Ganesh Chaturthi", "Karwa Chauth"],
-                significance: "Worship of Lord Ganesha"
-            },
-            {
-                name: "Panchami",
-                number: 5,
-                description: "Fifth lunar day",
-                festivals: ["Vasant Panchami", "Nag Panchami"],
-                significance: "Goddess Saraswati worship"
-            },
-            {
-                name: "Shashthi",
-                number: 6,
-                description: "Sixth lunar day",
-                festivals: ["Chhath Puja"],
-                significance: "Sun God worship"
-            },
-            {
-                name: "Saptami",
-                number: 7,
-                description: "Seventh lunar day",
-                festivals: ["Ratha Saptami"],
-                significance: "Sun God's birthday"
-            },
-            {
-                name: "Ashtami",
-                number: 8,
-                description: "Eighth lunar day",
-                festivals: ["Krishna Janmashtami", "Durga Ashtami"],
-                significance: "Birth of Lord Krishna"
-            },
-            {
-                name: "Navami",
-                number: 9,
-                description: "Ninth lunar day",
-                festivals: ["Rama Navami", "Maha Navami"],
-                significance: "Birth of Lord Rama"
-            },
-            {
-                name: "Dashami",
-                number: 10,
-                description: "Tenth lunar day",
-                festivals: ["Dussehra/Vijayadashami"],
-                significance: "Victory of good over evil"
-            },
-            {
-                name: "Ekadashi",
-                number: 11,
-                description: "Eleventh lunar day - occurs twice monthly",
-                festivals: ["24 Ekadashi festivals yearly"],
-                significance: "Most important for fasting and Lord Vishnu worship"
-            },
-            {
-                name: "Dvadashi",
-                number: 12,
-                description: "Twelfth lunar day",
-                festivals: [],
-                significance: "Breaking Ekadashi fast"
-            },
-            {
-                name: "Trayodashi",
-                number: 13,
-                description: "Thirteenth lunar day",
-                festivals: ["Dhanteras", "Pradosh Vrat"],
-                significance: "Wealth and prosperity"
-            },
-            {
-                name: "Chaturdashi",
-                number: 14,
-                description: "Fourteenth lunar day",
-                festivals: ["Maha Shivaratri"],
-                significance: "Great night of Lord Shiva"
-            },
-            {
-                name: "Purnima",
-                number: 15,
-                type: "Full Moon",
-                description: "Full Moon day - end of Shukla Paksha",
-                festivals: ["Guru Purnima", "Holi", "Sharad Purnima", "Hanuman Jayanti"],
-                significance: "Honoring teachers, harvest celebration"
-            },
-            {
-                name: "Amavasya",
-                number: 15,
-                type: "New Moon",
-                description: "New Moon day - end of Krishna Paksha",
-                festivals: ["Diwali", "Mahalaya Amavasya"],
-                significance: "Festival of lights, victory of light over darkness"
-            }
-        ];
-
-        const festivals2025 = [
-            { date: "January 15", name: "Makar Sankranti/Pongal", tithi: "Solar transition" },
-            { date: "February 2", name: "Vasant Panchami", tithi: "Magha Shukla Panchami" },
-            { date: "February 26", name: "Maha Shivaratri", tithi: "Phalguna Krishna Chaturdashi" },
-            { date: "March 14", name: "Holi", tithi: "Phalguna Purnima" },
-            { date: "March 30", name: "Gudi Padwa/Ugadi", tithi: "Chaitra Shukla Prathama" },
-            { date: "April 6", name: "Rama Navami", tithi: "Chaitra Shukla Navami" },
-            { date: "April 12", name: "Hanuman Jayanti", tithi: "Chaitra Purnima" },
-            { date: "May 30", name: "Akshaya Tritiya", tithi: "Vaishakha Shukla Tritiya" },
-            { date: "July 10", name: "Guru Purnima", tithi: "Ashadha Purnima" },
-            { date: "July 29", name: "Nag Panchami", tithi: "Shravana Shukla Panchami" },
-            { date: "August 9", name: "Raksha Bandhan", tithi: "Shravana Purnima" },
-            { date: "August 16", name: "Krishna Janmashtami", tithi: "Bhadrapada Krishna Ashtami" },
-            { date: "August 27", name: "Ganesh Chaturthi", tithi: "Bhadrapada Shukla Chaturthi" },
-            { date: "September 22", name: "Navratri Begins", tithi: "Ashwin Shukla Prathama" },
-            { date: "October 1", name: "Maha Navami", tithi: "Ashwin Shukla Navami" },
-            { date: "October 2", name: "Dussehra", tithi: "Ashwin Shukla Dashami" },
-            { date: "October 18", name: "Dhanteras", tithi: "Kartik Krishna Trayodashi" },
-            { date: "October 21", name: "Diwali", tithi: "Kartik Amavasya" },
-            { date: "October 23", name: "Bhai Dooj", tithi: "Kartik Shukla Dvitiya" },
-            { date: "November 5", name: "Kartik Purnima", tithi: "Kartik Purnima" }
-        ];
-
-        const festivalDetails = {
-            "Diwali": {
-                emoji: "🪔",
-                significance: "Victory of light over darkness, good over evil",
-                story: "Lord Rama returned to Ayodhya after 14 years of exile and defeating demon king Ravana. People lit oil lamps (diyas) to welcome him home. Also celebrates Goddess Lakshmi, goddess of wealth and prosperity.",
-                celebration: "Lighting diyas and candles, fireworks, new clothes, sweets, family gatherings, Lakshmi puja"
-            },
-            "Navratri": {
-                emoji: "💃",
-                significance: "Victory of Goddess Durga over demon Mahishasura, triumph of good over evil",
-                story: "Goddess Durga fought for 9 nights against the buffalo demon Mahishasura and defeated him on the 10th day (Dussehra)",
-                celebration: "Garba and Dandiya dance, fasting, prayers to 9 forms of Durga, wearing colorful clothes"
-            },
-            "Holi": {
-                emoji: "🎨",
-                significance: "Victory of devotee Prahlad, spring festival, celebration of love and colors",
-                story: "Demoness Holika tried to kill devotee Prahlad by sitting with him in fire, but she burned while Prahlad was saved by Lord Vishnu",
-                celebration: "Playing with colors, water balloons, music, dance, special food (gujiya, thandai), bonfires"
-            },
-            "Krishna Janmashtami": {
-                emoji: "🎂",
-                significance: "Birthday of Lord Krishna at midnight",
-                story: "Lord Krishna was born at midnight to save the world from his evil uncle Kansa",
-                celebration: "Fasting until midnight, Dahi Handi (breaking pot of curd), singing bhajans, decorating Krishna idols"
-            },
-            "Ganesh Chaturthi": {
-                emoji: "🐘",
-                significance: "Birth of Lord Ganesha, remover of obstacles",
-                story: "Lord Ganesha, the elephant-headed god, is worshipped before starting any new venture",
-                celebration: "Installing Ganesha idols, 10-day festival, modak offering, visarjan (immersion) in water"
-            },
-            "Rama Navami": {
-                emoji: "🏹",
-                significance: "Birthday of Lord Rama, symbol of dharma and righteousness",
-                story: "Lord Rama is the ideal king and the hero of Ramayana epic",
-                celebration: "Reading Ramayana, bhajans, processions, fasting"
-            },
-            "Maha Shivaratri": {
-                emoji: "🕉️",
-                significance: "Marriage of Shiva and Parvati, spiritual awakening",
-                story: "The night when Lord Shiva performed the cosmic dance of creation, preservation, and destruction",
-                celebration: "Night-long vigil, fasting, offering milk to Shiva Lingam, chanting Om Namah Shivaya"
-            },
-            "Ekadashi": {
-                emoji: "🙏",
-                significance: "Spiritual purification, control of 10 senses and mind, devotion to Lord Vishnu",
-                story: "Goddess Ekadashi emerged from Lord Vishnu's body to defeat demon Mura. Vishnu blessed that whoever fasts on this day receives liberation",
-                celebration: "Fasting (full or partial), prayers, chanting Vishnu mantras, avoiding grains"
-            }
-        };
-
-        // Populate festivals by tithi
-        function populateFestivalsByTithi() {
-            const grid = document.getElementById('festivalsGrid');
-            grid.innerHTML = '';
-            
-            tithiData.forEach(tithi => {
-                const card = document.createElement('div');
-                card.className = `card tithi-card ${tithi.name.toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-')}`;
-                
-                let festivalsHtml = '';
-                if (tithi.festivals && tithi.festivals.length > 0) {
-                    tithi.festivals.forEach(festival => {
-                        festivalsHtml += `<span class="festival-tag" onclick="showFestivalDetails('${festival}')">${festival}</span>`;
-                    });
-                }
-                
-                card.innerHTML = `
-                    <div class="card__body">
-                        <div class="tithi-number">${tithi.number}</div>
-                        <div class="tithi-name">${tithi.name}</div>
-                        <p>${tithi.description}</p>
-                        ${tithi.significance ? `<p><strong>Significance:</strong> ${tithi.significance}</p>` : ''}
-                        ${festivalsHtml ? `<div class="tithi-festivals">${festivalsHtml}</div>` : '<p><em>No major festivals</em></p>'}
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
-
-        // Populate 2025 calendar
-        function populateCalendar() {
-            const grid = document.getElementById('calendarGrid');
-            grid.innerHTML = '';
-            
-            // Group festivals by month
-            const monthlyFestivals = {};
-            festivals2025.forEach(festival => {
-                const month = festival.date.split(' ')[0];
-                if (!monthlyFestivals[month]) {
-                    monthlyFestivals[month] = [];
-                }
-                monthlyFestivals[month].push(festival);
-            });
-            
-            Object.keys(monthlyFestivals).forEach(month => {
-                const monthCard = document.createElement('div');
-                monthCard.className = 'calendar-month';
-                
-                let festivalsHtml = '';
-                monthlyFestivals[month].forEach(festival => {
-                    festivalsHtml += `
-                        <div class="festival-item" onclick="showFestivalDetails('${festival.name}')">
-                            <div>
-                                <div class="festival-name">${festival.name}</div>
-                                <div class="festival-date">${festival.date}</div>
-                            </div>
-                            <div class="emoji">🎉</div>
+                    <div class="festival-details">
+                        <div class="detail-row">
+                            <span class="icon">📅</span>
+                            <span><strong>Tithi:</strong> <span id="tithiName">-</span></span>
                         </div>
-                    `;
-                });
-                
-                monthCard.innerHTML = `
-                    <div class="month-title">${month} 2025</div>
-                    ${festivalsHtml}
-                `;
-                
-                grid.appendChild(monthCard);
-            });
-        }
-
-        // Show festival details in modal
-        function showFestivalDetails(festivalName) {
-            const modal = document.getElementById('festivalModal');
-            const modalBody = document.getElementById('modalBody');
-            
-            // Clean festival name for lookup
-            const cleanName = festivalName.split('/')[0].trim();
-            const details = festivalDetails[cleanName];
-            
-            if (details) {
-                modalBody.innerHTML = `
-                    <h2>${details.emoji} ${festivalName}</h2>
-                    <div class="mb-16">
-                        <h3>Significance</h3>
-                        <p>${details.significance}</p>
+                        <div class="detail-row">
+                            <span class="icon">🌙</span>
+                            <span><strong>Paksha:</strong> <span id="pakshaName">-</span></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="icon">🕐</span>
+                            <span><strong>Muhurat:</strong> <span id="muhuratTime">-</span></span>
+                        </div>
                     </div>
-                    <div class="mb-16">
-                        <h3>Story/Background</h3>
-                        <p>${details.story}</p>
+
+                    <div class="significance-box">
+                        <h3>💡 Significance</h3>
+                        <p id="significance">-</p>
                     </div>
-                    <div class="mb-16">
-                        <h3>How it's Celebrated</h3>
-                        <p>${details.celebration}</p>
+
+                    <div class="meaning-box">
+                        <h3>📖 What Does It Mean?</h3>
+                        <p id="meaning">-</p>
                     </div>
-                `;
-            } else {
-                modalBody.innerHTML = `
-                    <h2>🎉 ${festivalName}</h2>
-                    <p>This is an important Hindu festival. Click on other festivals to learn more detailed information!</p>
-                `;
-            }
-            
-            modal.classList.add('show');
-        }
 
-        // Close modal
-        function closeModal() {
-            document.getElementById('festivalModal').classList.remove('show');
-        }
+                    <div class="actions-grid">
+                        <div class="action-box do-box">
+                            <h4>✅ Do Today</h4>
+                            <ul id="doList"></ul>
+                        </div>
+                        <div class="action-box avoid-box">
+                            <h4>❌ Avoid Today</h4>
+                            <ul id="avoidList"></ul>
+                        </div>
+                    </div>
 
-        // Search functionality
-        function setupSearch() {
-            const searchInput = document.getElementById('festivalSearch');
-            searchInput.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase();
-                const cards = document.querySelectorAll('#festivalsGrid .card');
-                
-                cards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    if (text.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        }
+                    <div class="share-buttons">
+                        <button onclick="shareWhatsApp()" class="share-btn whatsapp">📱 Share on WhatsApp</button>
+                        <button onclick="shareTwitter()" class="share-btn twitter">🐦 Share on Twitter</button>
+                        <button onclick="copyLink()" class="share-btn copy">🔗 Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Smooth scrolling for navigation
-        function setupSmoothScrolling() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
+    <!-- All Festivals Timeline -->
+    <section id="festivals" class="festivals-section">
+        <div class="container">
+            <h2 class="section-title">🎊 All Festivals 2025</h2>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Search festivals..." onkeyup="searchFestivals()">
+            </div>
+            <div id="festivalsTimeline" class="festivals-grid"></div>
+        </div>
+    </section>
 
-        // Close modal when clicking outside
-        document.getElementById('festivalModal').addEventListener('click', (e) => {
-            if (e.target.id === 'festivalModal') {
-                closeModal();
-            }
-        });
+    <!-- Learn Section -->
+    <section id="learn" class="learn-section">
+        <div class="container">
+            <h2 class="section-title">📚 Learn About Hindu Calendar</h2>
 
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', () => {
-            populateFestivalsByTithi();
-            populateCalendar();
-            setupSearch();
-            setupSmoothScrolling();
-        });
-    </script>
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <h3>🌙 What is Tithi?</h3>
+                    <p><strong>Tithi</strong> is a lunar day in the Hindu calendar. Unlike solar days (24 hours), tithis vary from 19-26 hours based on the moon's position.</p>
+                    <p>There are <strong>30 tithis</strong> in a lunar month:</p>
+                    <ul>
+                        <li><strong>Shukla Paksha</strong> (Bright fortnight): 15 days when moon grows</li>
+                        <li><strong>Krishna Paksha</strong> (Dark fortnight): 15 days when moon shrinks</li>
+                    </ul>
+                    <div class="tithi-list">
+                        <h4>The 15 Tithis:</h4>
+                        <ol>
+                            <li>Prathama (Padyami)</li>
+                            <li>Dvitiya</li>
+                            <li>Tritiya</li>
+                            <li>Chaturthi</li>
+                            <li>Panchami</li>
+                            <li>Shashthi</li>
+                            <li>Saptami</li>
+                            <li>Ashtami</li>
+                            <li>Navami</li>
+                            <li>Dashami</li>
+                            <li>Ekadashi</li>
+                            <li>Dvadashi</li>
+                            <li>Trayodashi</li>
+                            <li>Chaturdashi</li>
+                            <li>Purnima (Full Moon) or Amavasya (New Moon)</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="learn-card">
+                    <h3>🕐 What is Muhurat?</h3>
+                    <p><strong>Muhurat</strong> is an auspicious time period of approximately 48 minutes (1/30th of a day).</p>
+                    <p><strong>Why it matters:</strong> Ancient science of selecting favorable timing for important life events.</p>
+
+                    <h4>Five Elements of Panchang:</h4>
+                    <ul>
+                        <li>📅 <strong>Tithi</strong> - Lunar day</li>
+                        <li>📆 <strong>Vara</strong> - Weekday</li>
+                        <li>⭐ <strong>Nakshatra</strong> - Lunar mansion/constellation</li>
+                        <li>🔄 <strong>Yoga</strong> - Luni-solar day</li>
+                        <li>⚡ <strong>Karana</strong> - Half of tithi</li>
+                    </ul>
+
+                    <h4>When Muhurat is Used:</h4>
+                    <ul>
+                        <li>💍 Weddings and engagements</li>
+                        <li>🏢 Starting a new business</li>
+                        <li>🏠 Housewarming ceremony</li>
+                        <li>🚗 Buying vehicle or property</li>
+                        <li>📚 Starting education</li>
+                        <li>💼 Job interviews and exams</li>
+                        <li>✈️ Important travel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Made with ❤️ for Indian Youth</p>
+            <p>TithiToday - Tradition in Your Pocket 🪔</p>
+            <p class="credits">Data sourced from traditional Hindu Panchang | For educational purposes</p>
+            <p class="copyright">© 2025 TithiToday. Free forever.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="panchang-data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
