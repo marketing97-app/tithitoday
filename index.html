@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindu Panchang Calendar 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Panchang 2025</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#festivals">All Festivals</a></li>
+                <li>
+                    <select id="yearSelector" class="year-selector">
+                        <option value="2025" selected>2025</option>
+                        <!-- Future years can be added here -->
+                        <!-- <option value="2026">2026</option> -->
+                        <!-- <option value="2027">2027</option> -->
+                    </select>
+                </li>
+                <li><a href="#reminders" class="reminder-btn">🔔 Reminders</a></li>
+                <li><a href="#learn">Learn Tithi</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Hindu Panchang Calendar 2025</h1>
+                <p class="hero-subtitle">Your complete guide to daily panchang, festivals, and auspicious timings</p>
+                <div class="today-date">
+                    <span id="currentDate"></span>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('today-panchang')">View Today's Panchang</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('calendar')">Browse Calendar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Today's Panchang -->
+        <section id="today-panchang" class="today-panchang">
+            <div class="container">
+                <h2>Today's Panchang</h2>
+                <div class="panchang-card" id="todayPanchangCard">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar View -->
+        <section id="calendar" class="calendar-section">
+            <div class="container">
+                <div class="calendar-header">
+                    <h2>Panchang Calendar</h2>
+                    <div class="month-navigation">
+                        <button id="prevMonth" class="btn btn-outline">&larr; Previous</button>
+                        <h3 id="currentMonth"></h3>
+                        <button id="nextMonth" class="btn btn-outline">Next &rarr;</button>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar days will be generated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Upcoming Festivals -->
+        <section id="festivals" class="festivals-section">
+            <div class="container">
+                <h2>Upcoming Festivals</h2>
+                <div class="festivals-grid" id="festivalsGrid">
+                    <!-- Festival cards will be generated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Festival Timeline -->
+        <section class="timeline-section">
+            <div class="container">
+                <h2>Festival Timeline</h2>
+                <div class="timeline-container">
+                    <div class="timeline" id="festivalTimeline">
+                        <!-- Timeline items will be generated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reminder Center -->
+        <section id="reminders" class="reminder-center">
+            <div class="container">
+                <h2 class="reminder-title">
+                    <span class="bell-icon">🔔</span>
+                    Reminder Center
+                </h2>
+                <div class="reminder-cards">
+                    <div class="reminder-card">
+                        <h3>Quick Setup</h3>
+                        <p>Enable all festival reminders in under 30 seconds!</p>
+                        <button class="btn btn-primary" onclick="showReminderAlert()">Enable All Reminders</button>
+                    </div>
+                    <div class="reminder-card">
+                        <h3>Custom Reminders</h3>
+                        <p>Choose specific festivals for personalized notifications</p>
+                        <button class="btn btn-secondary" onclick="showReminderAlert()">Customize Reminders</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn Tithi Section -->
+        <section id="learn" class="learn-section">
+            <div class="container">
+                <h2>Understanding Panchang</h2>
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <h3>What is Tithi?</h3>
+                        <p>Tithi is a lunar day in the Hindu calendar. It represents the angular relationship between the Sun and Moon. There are 30 tithis in a lunar month, each lasting approximately 19-26 hours.</p>
+                    </div>
+                    <div class="learn-card">
+                        <h3>Understanding Paksha</h3>
+                        <p><strong>Shukla Paksha:</strong> The bright half of the lunar month (waxing moon)<br><strong>Krishna Paksha:</strong> The dark half of the lunar month (waning moon)</p>
+                    </div>
+                    <div class="learn-card">
+                        <h3>Panchang Elements</h3>
+                        <p><strong>Vara:</strong> Day of the week<br><strong>Nakshatra:</strong> Lunar constellation<br><strong>Deity:</strong> Ruling deity of the day<br><strong>Muhurat:</strong> Auspicious timing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Hindu Panchang Calendar</h2>
+                <div class="about-content">
+                    <p>The Hindu Panchang Calendar is an ancient vedic calendar system that provides comprehensive information about lunar days, festivals, and auspicious timings. This web application brings traditional panchang wisdom to the digital age.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>Daily Tithi and Paksha information</li>
+                        <li>Major Hindu festival dates</li>
+                        <li>Auspicious timing (Muhurat)</li>
+                        <li>Nakshatra and ruling deity details</li>
+                        <li>Interactive calendar view</li>
+                        <li>WhatsApp reminder notifications (coming soon)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Day Detail Modal -->
+    <div id="dayModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="dayDetails">
+                <!-- Day details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="panchang-data-2025.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
