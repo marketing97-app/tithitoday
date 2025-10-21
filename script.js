@@ -477,3 +477,213 @@ window.searchFestivals = searchFestivals;
 window.addToCalendar = addToCalendar;
 window.enableBrowserNotifications = enableBrowserNotifications;
 window.saveEmailPreference = saveEmailPreference;
+
+
+// ============================================
+// PANCHANG CALENDAR FUNCTIONALITY
+// ============================================
+let currentCalendarMonth = new Date().getMonth();
+let currentCalendarYear = new Date().getFullYear();
+
+function initCalendar() {
+    renderCalendar(currentCalendarMonth, currentCalendarYear);
+}
+
+function previousMonth() {
+    currentCalendarMonth--;
+    if (currentCalendarMonth < 0) {
+        currentCalendarMonth = 11;
+        currentCalendarYear--;
+    }
+    renderCalendar(currentCalendarMonth, currentCalendarYear);
+}
+
+function nextMonth() {
+    currentCalendarMonth++;
+    if (currentCalendarMonth > 11) {
+        currentCalendarMonth = 0;
+        currentCalendarYear++;
+    }
+    renderCalendar(currentCalendarMonth, currentCalendarYear);
+}
+
+function renderCalendar(month, year) {
+    const calendarGrid = document.getElementById('calendarGrid');
+    const monthTitle = document.getElementById('calendarMonth');
+
+    if (!calendarGrid || !monthTitle) return;
+
+    // Month names
+    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+
+    monthTitle.textContent = `${monthNames[month]} ${year}`;
+
+    // Clear calendar
+    calendarGrid.innerHTML = '';
+
+    // Add day headers
+    const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    dayHeaders.forEach(day => {
+        const header = document.createElement('div');
+        header.className = 'calendar-day-header';
+        header.textContent = day;
+        calendarGrid.appendChild(header);
+    });
+
+    // Get first day of month and number of days
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+    // Today's date for highlighting
+    const today = new Date();
+    const isCurrentMonth = (month === today.getMonth() && year === today.getFullYear());
+
+    // Add previous month's trailing days
+    for (let i = firstDay - 1; i >= 0; i--) {
+        const dayCell = createDayCell(daysInPrevMonth - i, month - 1, year, true);
+        calendarGrid.appendChild(dayCell);
+    }
+
+    // Add current month's days
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayCell = createDayCell(day, month, year, false, isCurrentMonth && day === today.getDate());
+        calendarGrid.appendChild(dayCell);
+    }
+
+    // Add next month's leading days
+    const totalCells = firstDay + daysInMonth;
+    const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+    for (let day = 1; day <= remainingCells; day++) {
+        const dayCell = createDayCell(day, month + 1, year, true);
+        calendarGrid.appendChild(dayCell);
+    }
+}
+
+function createDayCell(day, month, year, isOtherMonth, isToday) {
+    const cell = document.createElement('div');
+    cell.className = 'calendar-day';
+
+    if (isOtherMonth) {
+        cell.classList.add('other-month');
+    }
+
+    if (isToday) {
+        cell.classList.add('today');
+    }
+
+    // Format date for lookup
+    const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+    // Add date number
+    const dateNum = document.createElement('div');
+    dateNum.className = 'calendar-date';
+    dateNum.textContent = day;
+    cell.appendChild(dateNum);
+
+    // Check if this date has festival data
+    if (panchangData[dateStr]) {
+        const data = panchangData[dateStr];
+
+        // Add tithi info
+        const tithiDiv = document.createElement('div');
+        tithiDiv.className = 'calendar-tithi';
+        tithiDiv.textContent = data.tithi;
+        cell.appendChild(tithiDiv);
+
+        // Add festival name if exists
+        if (data.festival) {
+            cell.classList.add('festival');
+            const festivalDiv = document.createElement('div');
+            festivalDiv.className = 'calendar-festival';
+            festivalDiv.textContent = data.festival;
+            cell.appendChild(festivalDiv);
+        }
+
+        // Special highlighting
+        if (data.tithi === 'Ekadashi') {
+            cell.classList.add('ekadashi');
+        }
+        if (data.tithi === 'Purnima' || data.tithi === 'Amavasya') {
+            cell.classList.add('purnima');
+        }
+
+        // Add click event to show details
+        cell.onclick = () => showFestivalDetails(dateStr);
+        cell.style.cursor = 'pointer';
+    }
+
+    return cell;
+}
+
+// Initialize calendar when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('calendarGrid')) {
+        initCalendar();
+    }
+});
+
+
+// ============================================
+// ENHANCED SHARE FUNCTIONS
+// ============================================
+function shareOnWhatsApp() {
+    const festivalData = getCurrentFestivalData();
+    const text = `Check out ${festivalData.festival} on ${festivalData.date}! ${festivalData.significance}`;
+    const url = window.location.href;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+}
+
+function shareOnInstagram() {
+    // Instagram doesn't support direct sharing via URL, so we copy to clipboard
+    copyToClipboard();
+    alert('Festival details copied! You can now paste it in your Instagram story or post.');
+}
+
+function shareOnTwitter() {
+    const festivalData = getCurrentFestivalData();
+    const text = `🎊 ${festivalData.festival} - ${festivalData.date}\n${festivalData.significance}`;
+    const url = window.location.href;
+    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+}
+
+function addToCalendar() {
+    const festivalData = getCurrentFestivalData();
+    alert('Calendar integration coming soon! For now, you can manually add: ' + festivalData.festival + ' on ' + festivalData.date);
+}
+
+function copyToClipboard() {
+    const festivalData = getCurrentFestivalData();
+    const text = `${festivalData.festival} - ${festivalData.date}\n${festivalData.significance}\n${window.location.href}`;
+
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Festival details copied to clipboard!');
+    }).catch(() => {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Festival details copied to clipboard!');
+    });
+}
+
+function getCurrentFestivalData() {
+    const today = getTodayDate();
+    const data = panchangData[today];
+    if (data) {
+        return {
+            festival: data.festival || 'Festival',
+            date: formatDate(today),
+            significance: data.significance || ''
+        };
+    }
+    return {
+        festival: 'Hindu Festival',
+        date: formatDate(today),
+        significance: 'Check out this amazing Hindu calendar!'
+    };
+}
