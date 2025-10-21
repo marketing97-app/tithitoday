@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TithiToday - Your Daily Hindu Panchang Guide</title>
+    <meta name="description" content="Modern Hindu Panchang guide for young people. Get today's tithi, festival info, and muhurat in a simple, youth-friendly format.">
+    <meta property="og:title" content="TithiToday - Ancient Wisdom, Modern Vibe">
+    <meta property="og:description" content="Understand your festivals, not just celebrate them. Your digital Panchang for the 21st century.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪔</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* Minimal inline styles for critical rendering */
+:root {
+  --header-orange: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+}
+
+/* Critical navbar styles for immediate visibility */
+.navbar {
+  background: var(--header-orange);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.year-selector {
+  background: white;
+  color: #FF6B35;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 16px;
+}
+
+.reminder-btn {
+  background: white;
+  color: #FF6B35;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="emoji">🪔</span>
+                TithiToday
+            </div>
+            <nav class="nav">
+                <a href="#home">Home</a>
+                <a href="#festivals">All Festivals</a>
+                <select id="yearSelector" class="year-selector" onchange="changeYear(this.value)" style="margin-right: 16px; font-weight: 600; font-size: 16px;">
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                </select>
+                <button class="reminder-btn" onclick="showNotificationSettings()" style="background: white; color: #FF6B35; padding: 8px 16px; border-radius: 25px; border: none; cursor: pointer; font-weight: 600; animation: pulse 2s infinite;">🔔 Setup Reminders</button>
+                <a href="#learn-tithi">Learn Tithi</a>
+                <a href="#about">About</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                🌙
+            </button>
+        </div>
+    </header>
+
+    <!-- Today's Panchang Hero -->
+    <section id="home" class="today-hero">
+        <div class="container">
+            <div class="today-card card">
+                <div class="today-date" id="todayDate">
+                    <!-- Auto-populated by JavaScript -->
+                </div>
+                
+                <div class="tithi-info" id="tithiInfo">
+                    <!-- Auto-populated by JavaScript -->
+                </div>
+                
+                <h1 class="today-festival" id="todayFestival">
+                    <!-- Auto-populated by JavaScript -->
+                </h1>
+                
+                <div class="significance" id="significance">
+                    <!-- Auto-populated by JavaScript -->
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn btn--primary" onclick="shareToday()">
+                        <span class="emoji">📱</span> Share Today's Tithi
+                    </button>
+                    <button class="btn btn--outline" onclick="showNotificationSettings()">
+                        <span class="emoji">🔔</span> Never Miss a Festival
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Settings Modal -->
+    <div id="notificationModal" class="modal">
+        <div class="modal-content notification-settings">
+            <button class="modal-close" onclick="closeNotificationModal()">&times;</button>
+            <h2>🔔 Festival Reminders</h2>
+            <p>Get notified a day before every festival!</p>
+            
+            <div class="notification-options">
+                <div class="notification-option">
+                    <div class="option-header">
+                        <span class="emoji">🔔</span>
+                        <div>
+                            <h4>Browser Notifications</h4>
+                            <p>Get popup notifications on this device</p>
+                        </div>
+                        <button id="browserNotifBtn" class="btn btn--primary" onclick="enableBrowserNotifications()">
+                            Enable
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="notification-option">
+                    <div class="option-header">
+                        <span class="emoji">📧</span>
+                        <div>
+                            <h4>Email Reminders</h4>
+                            <p>Receive email a day before festival</p>
+                        </div>
+                    </div>
+                    <form class="email-form" onsubmit="subscribeEmail(event)">
+                        <input type="email" placeholder="your.email@gmail.com" required class="email-input">
+                        <button type="submit" class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="notification-option">
+                    <div class="option-header">
+                        <span class="emoji">📅</span>
+                        <div>
+                            <h4>Calendar Integration</h4>
+                            <p>Add festivals to your calendar with reminders</p>
+                        </div>
+                        <button class="btn btn--primary" onclick="downloadAllFestivals()">
+                            Download All
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="notification-option">
+                    <div class="option-header">
+                        <span class="emoji">📱</span>
+                        <div>
+                            <h4>WhatsApp Alerts</h4>
+                            <p>Join our WhatsApp reminder group</p>
+                        </div>
+                        <button class="btn btn--primary" onclick="joinWhatsAppGroup()">
+                            Join Group
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reminder-preferences">
+                <h4>Notify me for:</h4>
+                <div class="preference-options">
+                    <label><input type="radio" name="reminderType" value="all" checked> All Festivals</label>
+                    <label><input type="radio" name="reminderType" value="major"> Major Festivals Only</label>
+                    <label><input type="radio" name="reminderType" value="ekadashi"> Ekadashi Only</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What to Do Today -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What to Do Today <span class="emoji">✨</span></h2>
+            <div class="action-cards" id="actionCards">
+                <!-- Auto-populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Festivals Preview -->
+    <section class="section" id="upcoming-preview">
+        <div class="container">
+            <h2 class="section-title">Upcoming Festivals <span class="emoji">🔍</span></h2>
+            <div class="upcoming-festivals" id="upcomingFestivals">
+                <!-- Auto-populated by JavaScript -->
+            </div>
+            <div class="text-center">
+                <button class="btn btn--outline" onclick="switchToNextYear()">
+                    Preview <span id="nextYear">2026</span> Festivals →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Festivals (Dynamic Year) -->
+    <section id="festivals" class="section">
+        <div class="container">
+            <h2 class="section-title">All Festivals <span id="currentYearDisplay">2025</span> <span class="emoji">📅</span></h2>
+            
+            <div class="search-container">
+                <input type="text" id="festivalSearch" class="search-input" 
+                       placeholder="Search festivals... 🔍">
+            </div>
+            
+            <div class="festival-timeline" id="festivalTimeline">
+                <!-- Auto-populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn About Tithi -->
+    <section id="learn-tithi" class="section">
+        <div class="container">
+            <h2 class="section-title">What is Tithi? <span class="emoji">🌙</span></h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Simple Explanation</h3>
+                    <p>A Tithi is a lunar day in the Hindu calendar. Unlike our regular calendar that follows the sun, Hindu festivals follow the moon's cycle!</p>
+                    <p><strong>Each tithi = Moon moving 12 degrees away from the sun</strong></p>
+                    <p>Think of it as cosmic timing - the universe's way of telling us when the energy is just right for celebration! 🌟</p>
+                </div>
+                <div class="card">
+                    <h3>Two Phases (Paksha)</h3>
+                    <p><span class="emoji">🌒</span> <strong>Shukla Paksha</strong> - Waxing moon (15 days)<br>
+                    Moon getting brighter, energy increasing</p>
+                    <p><span class="emoji">🌘</span> <strong>Krishna Paksha</strong> - Waning moon (15 days)<br>
+                    Moon getting darker, time for reflection</p>
+                    <p><strong>Total:</strong> 30 tithis in a lunar month</p>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: var(--space-32);">
+                <h3 class="text-center mb-24">All 15 Tithis in Each Paksha <span class="emoji">📋</span></h3>
+                <div class="grid grid-3">
+                    <div><strong>1. Prathama</strong> - New beginnings</div>
+                    <div><strong>2. Dvitiya</strong> - Foundation</div>
+                    <div><strong>3. Tritiya</strong> - Growth</div>
+                    <div><strong>4. Chaturthi</strong> - Stability</div>
+                    <div><strong>5. Panchami</strong> - Knowledge</div>
+                    <div><strong>6. Shashthi</strong> - Nurturing</div>
+                    <div><strong>7. Saptami</strong> - Courage</div>
+                    <div><strong>8. Ashtami</strong> - Power</div>
+                    <div><strong>9. Navami</strong> - Completion</div>
+                    <div><strong>10. Dashami</strong> - Victory</div>
+                    <div><strong>11. Ekadashi</strong> - Spiritual purification</div>
+                    <div><strong>12. Dvadashi</strong> - Fulfillment</div>
+                    <div><strong>13. Trayodashi</strong> - Transformation</div>
+                    <div><strong>14. Chaturdashi</strong> - Preparation</div>
+                    <div><strong>15. Purnima/Amavasya</strong> - Culmination</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn About Muhurat -->
+    <section id="learn-muhurat" class="section">
+        <div class="container">
+            <h2 class="section-title">What is Muhurat? <span class="emoji">⏰</span></h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Simple Definition</h3>
+                    <p>Muhurat is an auspicious time period of approximately 48 minutes. Think of it as finding the perfect time for important life events!</p>
+                    <p><strong>Why 48 minutes?</strong> It's based on ancient astronomical calculations that determine when planetary positions are most favorable.</p>
+                    <p>Like finding the perfect moment to post on Instagram for maximum likes, but for life! 📸✨</p>
+                </div>
+                <div class="card">
+                    <h3>When Do We Use Muhurat? <span class="emoji">🤔</span></h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><span class="emoji">💒</span> Weddings &amp; engagements</li>
+                        <li><span class="emoji">🏢</span> Starting new business</li>
+                        <li><span class="emoji">🏠</span> Housewarming ceremony</li>
+                        <li><span class="emoji">🚗</span> Buying vehicle or property</li>
+                        <li><span class="emoji">📚</span> Starting education/exams</li>
+                        <li><span class="emoji">💼</span> Job interviews</li>
+                        <li><span class="emoji">✈️</span> Important travels</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card" style="margin-top: var(--space-32);">
+                <h3>The Five Elements of Muhurat</h3>
+                <div class="grid grid-3">
+                    <div><strong>Tithi</strong> - Lunar day</div>
+                    <div><strong>Vara</strong> - Weekday</div>
+                    <div><strong>Nakshatra</strong> - Star constellation</div>
+                    <div><strong>Yoga</strong> - Auspicious period</div>
+                    <div><strong>Karana</strong> - Half of tithi</div>
+                </div>
+                <p style="margin-top: var(--space-16); text-align: center;">When all five align perfectly, you get the ultimate muhurat! 🎯</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reminder Center -->
+    <section id="reminders" class="section">
+        <div class="container">
+            <h2 class="section-title">Reminder Center <span class="emoji">🔔</span></h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Quick Setup</h3>
+                    <p>Enable all festival reminders in under 30 seconds!</p>
+                    <button class="btn btn--primary" onclick="showNotificationSettings()">
+                        🚀 Setup All Reminders
+                    </button>
+                </div>
+                <div class="card">
+                    <h3>Your Status</h3>
+                    <div id="reminderStatus">
+                        <p>🔔 Browser: <span class="status-disabled">Disabled</span></p>
+                        <p>📧 Email: <span class="status-disabled">Not subscribed</span></p>
+                        <p>📅 Calendar: <span class="status-disabled">No downloads</span></p>
+                        <p>📱 WhatsApp: <span class="status-disabled">Not joined</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About TithiToday <span class="emoji">💡</span></h2>
+            <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h3>Ancient Wisdom, Modern Vibe ✨</h3>
+                <p>We believe that understanding your cultural roots shouldn't feel like homework. TithiToday makes Hindu festivals, tithis, and traditions accessible for our generation.</p>
+                <p><strong>Our Mission:</strong> Help young people connect with their heritage in a fun, simple, and meaningful way.</p>
+                <p class="text-center" style="margin-top: var(--space-24);">
+                    <em>"Tradition in your pocket" 📱</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#" onclick="shareWhatsApp()" title="Share on WhatsApp">📱</a>
+                <a href="#" onclick="shareTwitter()" title="Share on Twitter">🐦</a>
+                <a href="#" onclick="shareInstagram()" title="Share on Instagram">📸</a>
+            </div>
+            <p>Made with ❤️ for Indian youth</p>
+            <p><a href="https://github.com" target="_blank" style="color: var(--color-primary);">⭐ Star us on GitHub</a></p>
+        </div>
+    </footer>
+
+    <!-- Floating Notification Button -->
+    <div class="floating-notification" id="floatingNotification" onclick="showNotificationSettings()">
+        🔔 Setup Reminders
+    </div>
+
+    <!-- Festival Details Modal -->
+    <div id="festivalModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div id="modalBody">
+                <!-- Modal content will be populated by JavaScript -->
+            </div>
+            <div class="festival-share-actions" id="festivalShareActions">
+                <!-- Share buttons will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="reminders.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Initialization script
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+        });
+    </script>
+</body>
+</html>
